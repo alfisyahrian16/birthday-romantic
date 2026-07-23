@@ -108,19 +108,11 @@ TEXT
 
     letter-spacing:.4px;
 
-    color:#ffffff;
+    color:#6b2d4f;
 
     text-shadow:
-
-        0 8px 25px rgba(0,0,0,.45),
-        0 0 35px rgba(255,190,225,.45);
-
-    opacity:1;
-
-    transition:
-
-        opacity .8s ease,
-        transform .8s ease;
+        0 8px 25px rgba(255,255,255,.35),
+        0 0 18px rgba(255,120,180,.25);
 
 }
 
