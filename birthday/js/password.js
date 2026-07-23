@@ -8,7 +8,7 @@ const input=document.getElementById("password");
 
 const msg=document.getElementById("message");
 
-const secret = "alfi syahrian yang ga pernah nyebelin";
+const secret = "alfi syahrian";
 
 btn.onclick=function(){
 
