@@ -1,0 +1,165 @@
+body{
+
+margin:0;
+
+background:#000;
+
+overflow:hidden;
+
+font-family:Poppins,sans-serif;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+color:white;
+
+}
+
+#background{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:url("../assets/night.jpg");
+
+background-size:cover;
+
+filter:brightness(.35);
+
+animation:zoom 25s linear infinite alternate;
+
+}
+
+.overlay{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.35);
+
+}
+
+#text{
+
+position:relative;
+
+font-size:48px;
+
+font-weight:300;
+
+text-align:center;
+
+width:80%;
+
+transition:1s;
+
+line-height:1.5;
+
+}
+
+#pageTransition{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#fff7fb;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity .9s ease;
+
+    z-index:99999;
+
+}
+
+#pageTransition.show{
+
+    opacity:1;
+
+}
+
+.fadeOut{
+
+    animation:introFade .9s ease forwards;
+
+}
+
+@keyframes introFade{
+
+    from{
+
+        opacity:1;
+
+        filter:blur(0);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        filter:blur(12px);
+
+        transform:scale(1.03);
+
+    }
+
+}
+
+@keyframes zoom{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.1);
+
+}
+
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media (max-width:768px){
+
+#text{
+
+    width:90%;
+
+    font-size:34px;
+
+    line-height:1.6;
+
+}
+
+}
+
+@media (max-width:430px){
+
+#text{
+
+    font-size:28px;
+
+}
+
+}

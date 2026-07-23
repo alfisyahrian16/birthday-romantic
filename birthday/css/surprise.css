@@ -1,0 +1,905 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    overflow:hidden;
+    background:#020617;
+    font-family:'Poppins',sans-serif;
+    color:white;
+
+}
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#1e293b 0%,#020617 70%);
+
+    z-index:-3;
+
+}
+
+/* ==========================
+   STARS
+========================== */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.18;
+
+    animation:moveStars 80s linear infinite;
+
+    z-index:-2;
+
+}
+
+@keyframes moveStars{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-600px);
+
+}
+
+}
+
+/* ==========================
+   FIREWORK CANVAS
+========================== */
+
+#fireworks{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+/* ==========================
+   DARK OVERLAY
+========================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.18);
+
+    z-index:2;
+
+}
+
+/* ==========================
+   CONTENT
+========================== */
+
+.content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+/* ==========================
+   CAKE
+========================== */
+
+/* ==========================
+   REALISTIC CAKE
+========================== */
+
+.cakeWrapper{
+
+    position:relative;
+
+    width:340px;
+    height:420px;
+
+    animation:cakeAppear 1.4s ease forwards;
+
+    transform:translateY(250px);
+
+    opacity:0;
+
+}
+
+.cakeGlow{
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    left:50%;
+    top:120px;
+
+    transform:translateX(-50%);
+
+    background:#ff8fc7;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:.35;
+
+}
+
+.layer{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-radius:18px;
+
+    box-shadow:
+
+    inset 0 8px rgba(255,255,255,.35),
+
+    0 10px 25px rgba(0,0,0,.2);
+
+}
+
+.layer1{
+
+    bottom:45px;
+
+    width:280px;
+    height:90px;
+
+    background:linear-gradient(#ff9bc8,#ff77b5);
+
+}
+
+.layer2{
+
+    bottom:120px;
+
+    width:220px;
+    height:80px;
+
+    background:linear-gradient(#ffc7df,#ff9dc7);
+
+}
+
+.layer3{
+
+    bottom:185px;
+
+    width:160px;
+    height:70px;
+
+    background:linear-gradient(#ffe3ef,#ffc4dd);
+
+}
+
+.cream{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:245px;
+
+    width:170px;
+    height:22px;
+
+    background:white;
+
+    border-radius:20px;
+
+}
+
+.cakeTop{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:258px;
+
+    width:150px;
+    height:18px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+}
+
+.plate{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:20px;
+
+    width:320px;
+    height:24px;
+
+    background:#ececec;
+
+    border-radius:50px;
+
+}
+
+/* ==========================
+   NUMBER CANDLES
+========================== */
+
+.numberCandles{
+
+    position:absolute;
+
+    left:50%;
+
+    top:70px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:2px;
+
+    z-index:30;
+
+}
+
+.number{
+
+    position:relative;
+
+    width:48px;
+    height:70px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+}
+
+.numberLeft{
+
+    transform:rotate(-10deg);
+
+}
+
+.numberRight{
+
+    transform:rotate(10deg);
+
+}
+
+.number span{
+
+    font-size:72px;
+
+    font-weight:900;
+
+    font-family:'Poppins',sans-serif;
+
+    line-height:1;
+
+    background:linear-gradient(
+
+        #ffffff,
+        #ffe4f0,
+        #ff8fc7
+
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+
+        0 0 2px white,
+
+        0 0 8px rgba(255,180,220,.8),
+
+        0 4px 6px rgba(0,0,0,.25);
+
+}
+
+.flame{
+
+    position:absolute;
+
+    top:-18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:16px;
+    height:26px;
+
+    background:radial-gradient(circle,#fff8b5,#ff9800);
+
+    border-radius:50% 50% 50% 50%;
+
+    animation:flicker .12s infinite alternate;
+
+    filter:drop-shadow(0 0 12px orange);
+
+}
+
+@keyframes flicker{
+
+0%{
+
+transform:
+translateX(-50%)
+rotate(-3deg)
+scale(1);
+
+}
+
+100%{
+
+transform:
+translateX(-50%)
+rotate(3deg)
+scale(.88);
+
+}
+
+}
+
+@keyframes cakeAppear{
+
+from{
+
+opacity:0;
+
+transform:translateY(250px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================
+   BALLOONS
+========================== */
+
+.balloons{
+
+    position:fixed;
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:3;
+
+}
+
+.balloon{
+
+    position:absolute;
+
+    bottom:-180px;
+
+    width:70px;
+    height:90px;
+
+    border-radius:50% 50% 45% 45%;
+
+    animation:floatUp linear forwards;
+
+    box-shadow:
+    inset -10px -10px rgba(255,255,255,.25);
+
+}
+
+.balloon::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:100%;
+
+    width:2px;
+    height:120px;
+
+    background:rgba(255,255,255,.4);
+
+}
+
+@keyframes floatUp{
+
+    from{
+
+        transform:
+        translateY(0);
+
+    }
+
+    to{
+
+        transform:
+        translateY(-130vh);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+.balloon{
+
+    width:50px;
+    height:65px;
+
+}
+
+.balloon::before{
+
+    height:90px;
+
+}
+
+}
+
+@keyframes cakeAppear{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(120px)
+scale(.6);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+
+}
+
+}
+
+@keyframes cakeFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+/* ==========================
+   TITLE
+========================== */
+
+.content h1{
+
+    margin-top:30px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:72px;
+
+    font-weight:400;
+
+    opacity:0;
+
+    animation:fadeUp 1.2s ease forwards;
+
+    animation-delay:1s;
+
+}
+
+.content h2{
+
+    margin-top:10px;
+
+    font-size:34px;
+
+    font-weight:600;
+
+    color:#ffd4e7;
+
+    opacity:0;
+
+    animation:fadeUp 1.2s ease forwards;
+
+    animation-delay:1.6s;
+
+}
+
+.content p{
+
+    margin-top:28px;
+
+    max-width:700px;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#ececec;
+
+    opacity:0;
+
+    animation:fadeUp 1.2s ease forwards;
+
+    animation-delay:2.3s;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+}
+
+/* ==========================
+   GLOW
+========================== */
+
+.content::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:#ff6fb0;
+
+    filter:blur(140px);
+
+    opacity:.25;
+
+    z-index:-1;
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.cakeWrapper{
+
+width:280px;
+height:360px;
+
+}
+
+.content h1{
+
+font-size:52px;
+
+}
+
+.content h2{
+
+font-size:24px;
+
+}
+
+.content p{
+
+font-size:16px;
+
+line-height:1.8;
+
+padding:0 15px;
+
+}
+
+}
+
+@media(max-width:430px){
+
+.cakeWrapper{
+
+    width:230px;
+    height:310px;
+
+}
+
+.content h1{
+
+font-size:42px;
+
+}
+
+.content h2{
+
+font-size:20px;
+
+}
+
+.content p{
+
+font-size:15px;
+
+}
+
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width:992px){
+
+.cakeWrapper{
+
+    width:300px;
+    height:390px;
+
+}
+
+.content{
+
+padding:30px;
+
+}
+
+.content h1{
+
+font-size:60px;
+
+}
+
+.content h2{
+
+font-size:28px;
+
+}
+
+.content p{
+
+max-width:90%;
+font-size:18px;
+
+}
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width:768px){
+
+.cakeWrapper{
+
+    width:260px;
+    height:340px;
+
+}
+
+.content{
+
+justify-content:center;
+padding:25px 20px;
+
+}
+
+.content h1{
+
+font-size:44px;
+line-height:1.2;
+
+}
+
+.content h2{
+
+font-size:22px;
+
+}
+
+.content p{
+
+width:100%;
+max-width:100%;
+font-size:16px;
+line-height:1.8;
+margin-top:20px;
+
+}
+
+.content::before{
+
+width:280px;
+height:280px;
+filter:blur(90px);
+
+}
+
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width:480px){
+
+.cakeWrapper{
+
+    width:220px;
+    height:300px;
+
+}
+
+.content{
+
+padding:20px 16px;
+
+}
+
+.content h1{
+
+font-size:34px;
+
+}
+
+.content h2{
+
+font-size:18px;
+
+}
+
+.content p{
+
+font-size:14px;
+line-height:1.7;
+
+}
+
+}
+
+
+/* =================================
+   VERY SMALL DEVICE
+================================= */
+
+@media (max-width:360px){
+
+.cakeWrapper{
+
+    width:180px;
+    height:250px;
+
+}
+
+.content h1{
+
+font-size:30px;
+
+}
+
+.content h2{
+
+font-size:16px;
+
+}
+
+.content p{
+
+font-size:13px;
+
+}
+
+}
