@@ -26,7 +26,7 @@ window.location.href="intro.html";
 
 }else{
 
-msg.innerHTML=" salah, yang bener alfi syahrian yang ga pernah nyebelin";
+msg.innerHTML=" salah, pake huruf kecil dan jgn typo ya cantik";
 
 input.value="";
 
