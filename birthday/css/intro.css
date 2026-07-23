@@ -1,72 +1,132 @@
+/*==================================
+GOOGLE FONT
+==================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*==================================
+RESET
+==================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,
 body{
 
-margin:0;
-
-background:#000;
-
-overflow:hidden;
-
-font-family:Poppins,sans-serif;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-height:100vh;
-
-color:white;
+    width:100%;
+    height:100%;
 
 }
+
+body{
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#fff7fc;
+
+    color:#ffffff;
+
+}
+
+/*==================================
+BACKGROUND
+==================================*/
 
 #background{
 
-position:absolute;
+    position:absolute;
 
-width:100%;
+    inset:0;
 
-height:100%;
+    background:
+    url("../assets/night.jpg") center center / cover no-repeat;
 
-background:url("../assets/night.jpg");
+    animation:zoomBackground 28s ease-in-out infinite alternate;
 
-background-size:cover;
-
-filter:brightness(.35);
-
-animation:zoom 25s linear infinite alternate;
+    filter:
+    brightness(.55)
+    saturate(1.15);
 
 }
+
+/*==================================
+OVERLAY
+==================================*/
 
 .overlay{
 
-position:absolute;
+    position:absolute;
 
-width:100%;
+    inset:0;
 
-height:100%;
+    background:
 
-background:rgba(0,0,0,.35);
+    linear-gradient(
+        rgba(255,180,220,.15),
+        rgba(255,120,190,.30)
+    ),
+
+    radial-gradient(
+        circle at center,
+        rgba(255,255,255,.08),
+        rgba(0,0,0,.30)
+    );
 
 }
+
+/*==================================
+TEXT
+==================================*/
 
 #text{
 
-position:relative;
+    position:relative;
 
-font-size:48px;
+    z-index:10;
 
-font-weight:300;
+    width:min(90%,900px);
 
-text-align:center;
+    padding:clamp(10px,3vw,30px);
 
-width:80%;
+    text-align:center;
 
-transition:1s;
+    font-size:clamp(1.6rem,3vw,3.2rem);
 
-line-height:1.5;
+    font-weight:300;
+
+    line-height:1.8;
+
+    letter-spacing:.4px;
+
+    color:#ffffff;
+
+    text-shadow:
+
+        0 8px 25px rgba(0,0,0,.45),
+        0 0 35px rgba(255,190,225,.45);
+
+    opacity:1;
+
+    transition:
+
+        opacity .8s ease,
+        transform .8s ease;
 
 }
+
+/*==================================
+PAGE TRANSITION
+==================================*/
 
 #pageTransition{
 
@@ -74,13 +134,13 @@ line-height:1.5;
 
     inset:0;
 
-    background:#fff7fb;
+    background:#fff6fb;
 
     opacity:0;
 
     pointer-events:none;
 
-    transition:opacity .9s ease;
+    transition:opacity .8s ease;
 
     z-index:99999;
 
@@ -94,7 +154,27 @@ line-height:1.5;
 
 .fadeOut{
 
-    animation:introFade .9s ease forwards;
+    animation:introFade .9s forwards;
+
+}
+
+/*==================================
+ANIMATION
+==================================*/
+
+@keyframes zoomBackground{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.10);
+
+    }
 
 }
 
@@ -103,6 +183,7 @@ line-height:1.5;
     from{
 
         opacity:1;
+        transform:scale(1);
 
         filter:blur(0);
 
@@ -112,54 +193,56 @@ line-height:1.5;
 
         opacity:0;
 
-        filter:blur(12px);
+        transform:scale(1.04);
 
-        transform:scale(1.03);
+        filter:blur(12px);
 
     }
 
 }
 
-@keyframes zoom{
+/*==================================
+PHONE
+==================================*/
 
-from{
+@media (max-width:480px){
 
-transform:scale(1);
+    #text{
 
-}
+        width:92%;
 
-to{
+        line-height:1.7;
 
-transform:scale(1.1);
+        letter-spacing:0;
 
-}
+    }
 
 }
 
 /*==================================
-RESPONSIVE
+TABLET
 ==================================*/
 
-@media (max-width:768px){
+@media (min-width:768px){
 
-#text{
+    #text{
 
-    width:90%;
+        width:min(85%,900px);
 
-    font-size:34px;
-
-    line-height:1.6;
+    }
 
 }
 
-}
+/*==================================
+LARGE DESKTOP
+==================================*/
 
-@media (max-width:430px){
+@media (min-width:1600px){
 
-#text{
+    #text{
 
-    font-size:28px;
+        max-width:1000px;
 
-}
+    }
 
 }
