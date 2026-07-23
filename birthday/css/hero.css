@@ -1860,6 +1860,8 @@ LETTER MODAL
 
 }
 
+
+
 /*==============================
 START EXPERIENCE
 ==============================*/
@@ -1994,6 +1996,9 @@ START EXPERIENCE
 
 }
 
+
+
+
 .hiddenWebsite.show{
 
     opacity:1;
@@ -2001,24 +2006,6 @@ START EXPERIENCE
     visibility:visible;
 
     transform:translateY(0);
-
-}
-
-.lightbox,
-.letterModal,
-.endingOverlay{
-
-    pointer-events:none;
-
-}
-
-.lightbox.active,
-.letterModal.active,
-.endingOverlay.show{
-
-    pointer-events:auto;
-
-}
 
 
 @keyframes popup{
@@ -2550,5 +2537,21 @@ h2{
 .surpriseBtn{
     font-size:17px;
 }
+
+}
+
+   .lightbox,
+.letterModal,
+.endingOverlay{
+
+    pointer-events:none;
+
+}
+
+.lightbox.active,
+.letterModal.active,
+.endingOverlay.show{
+
+    pointer-events:auto;
 
 }
