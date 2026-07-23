@@ -2540,18 +2540,3 @@ h2{
 
 }
 
-   .lightbox,
-.letterModal,
-.endingOverlay{
-
-    pointer-events:none;
-
-}
-
-.lightbox.active,
-.letterModal.active,
-.endingOverlay.show{
-
-    pointer-events:auto;
-
-}
